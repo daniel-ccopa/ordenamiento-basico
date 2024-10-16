@@ -1,7 +1,3 @@
-¡Claro, Cristian Daniel! A continuación te proporciono el contenido para el archivo `README.md` y te guío sobre cómo crear el archivo `LICENSE` para tu aplicación.
-
----
-
 # 📋 Ordenador de Cadenas y Números
 
 **Autor:** Cristian Daniel Ccopa Acero
