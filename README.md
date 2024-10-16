@@ -2,9 +2,6 @@
 
 ---
 
-### README.md
-
-```markdown
 # 📋 Ordenador de Cadenas y Números
 
 **Autor:** Cristian Daniel Ccopa Acero
