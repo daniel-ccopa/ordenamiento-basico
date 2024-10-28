@@ -38,7 +38,7 @@ def main():
 
     st.title("📋 Ordenador de Cadenas y Números")
     st.markdown("""
-    **Universidad Nacional del Altiplano - PUNO**
+    **Universidad Nacional del Altiplano - Puno**
 
     **Facultad de Ingeniería Estadística e Informática**
 
