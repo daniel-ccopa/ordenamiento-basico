@@ -18,8 +18,31 @@ def bubble_sort(data, reverse=False):
                 data[j], data[j + 1] = data[j + 1], data[j]
     return data
 
+def format_with_indices(data):
+    """Formatea una lista con índices."""
+    return [f"{i}: {repr(item)}" for i, item in enumerate(data)]
+
 def main():
     st.set_page_config(page_title="Ordenador de Datos", page_icon="📊", layout="centered")
+
+    # CSS global para aumentar el tamaño de fuente
+    global_css = '''
+    <style>
+    html, body, [class*="css"]  {
+        font-size: 18px !important; /* Tamaño de fuente aumentado */
+    }
+    .custom-box {
+        background-color: #000000; /* Fondo negro */
+        color: #ffffff;           /* Texto blanco */
+        border-radius: 10px;      /* Bordes redondeados */
+        padding: 15px;            /* Espaciado interno */
+        font-size: 16px;          /* Tamaño de texto */
+        font-family: Consolas, monospace; /* Fuente tipo consola */
+        margin-bottom: 20px;      /* Espaciado inferior */
+    }
+    </style>
+    '''
+    st.markdown(global_css, unsafe_allow_html=True)
 
     page_bg_img = '''
     <style>
@@ -34,7 +57,7 @@ def main():
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    st.sidebar.image("https://raw.githubusercontent.com/daniel-ccopa/Apuntes-7semestre/refs/heads/main/finesi.png", use_column_width=True)
+    st.sidebar.image("https://raw.githubusercontent.com/daniel-ccopa/Apuntes-7semestre/refs/heads/main/finesi.png", use_container_width=True)
 
     st.title("📋 Ordenador de Cadenas y Números")
     st.markdown("""
@@ -99,13 +122,13 @@ def main():
 
     if data:
         st.subheader("Datos Ingresados")
-        st.write(data)
+        st.markdown(f"<div class='custom-box'>{'<br>'.join(format_with_indices(data))}</div>", unsafe_allow_html=True)
 
         reverse_order = True if sort_order == "Descendente" else False
         sorted_data = bubble_sort(data, reverse=reverse_order)
 
         st.subheader(f"Datos Ordenados ({sort_order})")
-        st.write(sorted_data)
+        st.markdown(f"<div class='custom-box'>{'<br>'.join(format_with_indices(sorted_data))}</div>", unsafe_allow_html=True)
 
         if data_type == "Números":
             output_data = '\n'.join([str(item) for item in sorted_data])
